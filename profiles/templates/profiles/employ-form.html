@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiodataForm</title>
+</head>
+<body>
+    <a style="font-size: 20px; text-decoration: none;" href="{% url 'index' %}">Home</a>
+    <a style="font-size: 20px; text-decoration: none;" href="{% url 'form' %}">BiodataForm</a>
+    <hr>
+    <h1 style="text-align: center;">Employ-Form </h1>
+    <form method="POST" action="">{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submite</button>
+
+    </form>
+</body>
+</html>
