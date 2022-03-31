@@ -3,6 +3,7 @@ from .models import *
 from .forms import *
 
 # Create your views here.
+# this is an edit
 def index(request):
     context = {}
     return render(request, 'profiles/index.html', context)
