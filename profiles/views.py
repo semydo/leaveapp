@@ -5,8 +5,9 @@ from .forms import *
 # Create your views here.
 # this is an edit
 def index(request):
-    context = {}
-    return render(request, 'profiles/index.html', context)
+     data = Biodata.object.all()
+     context = {'data':data}
+     return render(request, 'profiles/index.html', context)
 
 def BiodataViews(request):
     form = BiodataForm()

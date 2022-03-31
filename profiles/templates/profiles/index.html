@@ -11,5 +11,15 @@
     <a style="font-size: 20px; text-decoration: none;" href="{% url 'e_form' %}">employForm</a>
     <hr>
     <h1 style="text-align: center;">index page</h1>
+    {% for i in data %}
+      {{i.file_number}} <br>
+      {{i.first_name}} <br>
+      {{i.last_name}} <br>
+      {{i.other_name}} <br>
+      {{i.date_of_birth}} <br>
+      {{i.gender}} <br>
+      {{i.nationality}} <br>
+      {{i.created_by}} <br>
+    {% endfor %}
 </body>
 </html>
