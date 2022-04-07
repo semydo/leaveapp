@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .models import *
 from .forms import *
 
-# Create your views here.
+# Create your gitviews here.
 # this is an edit
 def index(request):
      data = Biodata.objects.all()
@@ -19,7 +19,7 @@ def BiodataViews(request):
     context = {'form':form}        
     return render(request,  'profiles/Bio-form.html', context)
 
-
+# this is an edit 3
 def EmploymentDetails(request):
     form = EmploymentDetailsForm()
     if request.method == 'POST':
