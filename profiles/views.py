@@ -21,6 +21,7 @@ def BiodataViews(request):
 
 
 def EmploymentDetails(request):
+    
     form = EmploymentDetailsForm()
     if request.method == 'POST':
         form = EmploymentDetailsForm(request.POST)
