@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from .models import *
 from .forms import *
 
+# CHECKS FOR GIT
+
 def index(request):
      data = Biodata.objects.all()
      context = {'data':data}
