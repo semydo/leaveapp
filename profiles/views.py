@@ -7,7 +7,7 @@ from .forms import *
 def index(request):
      data = Biodata.objects.all()
      context = {'data':data}
-     return render(request, 'profiles/index.html', context)
+     return render(request, 'home/index.html', context)
 
      
 def BiodataViews(request):
