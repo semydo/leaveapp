@@ -27,7 +27,7 @@ def BiodataViews(request):
         bio = Biodata(file_number=file_number,first_name=first_name,last_name=last_name,other_name=other_name,
                       date_of_birth=date_of_birth,gender=gender, nationality=nationality,passport=passport)
         bio.save()
-        return redirect("index") 
+        return redirect("/") 
     context = {'gend':gend,'con':con}           
     return render(request,  'profiles/Bio-form.html', context)
 
