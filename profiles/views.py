@@ -2,13 +2,14 @@ from django.shortcuts import render,redirect
 from .models import *
 from .forms import *
 
-# Create your gitviews here.
-# this is an edit
+# CHECKS FOR GIT
+
 def index(request):
      data = Biodata.objects.all()
      context = {'data':data}
-     return render(request, 'profiles/index.html', context)
-# this is an edit 2
+     return render(request, 'home/index.html', context)
+
+     
 def BiodataViews(request):
     form = BiodataForm()
     if request.method == 'POST':
@@ -19,9 +20,8 @@ def BiodataViews(request):
     context = {'form':form}        
     return render(request,  'profiles/Bio-form.html', context)
 
-# this is an edit 3
+
 def EmploymentDetails(request):
-    
     form = EmploymentDetailsForm()
     if request.method == 'POST':
         form = EmploymentDetailsForm(request.POST)
