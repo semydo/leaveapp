@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
     path('profiles/',include('profiles.urls')),
     path('', include('accounts.urls')),
 ]
@@ -29,6 +28,3 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-=======
-    path('',include('profiles.urls'))
->>>>>>> 4390778b897c159fcf453d0025c46737fb06ec90
