@@ -53,7 +53,7 @@
                                         <div class="form-group">
                                             <label for="exampleFormControlSelect1">Nationality</label>
                                             <select class="form-control" name="nationality">
-                                                {% for i in nationality %}
+                                                {% for i in con %}
                                                 <option value="{{i.id}}">{{i.title}}</option>
                                                 {% endfor %}
                                             </select>
@@ -82,7 +82,7 @@
                                         <div class="form-group">
                                             <label for="exampleFormControlSelect1">Gender</label>
                                             <select class="form-control" name="gender">
-                                                {% for i in gender %}
+                                                {% for i in gend %}
                                                 <option value="{{i.id}}">{{i.title}}</option>
                                                 {% endfor %}
                                             </select>
