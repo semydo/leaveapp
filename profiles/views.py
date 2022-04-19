@@ -11,13 +11,24 @@ def index(request):
 
      
 def BiodataViews(request):
-    form = BiodataForm()
+    gend = Gender.objects.all()
+    con = Country.objects.all()
     if request.method == 'POST':
-        form = BiodataForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-    context = {'form':form}        
+        file_number = request.POST.get('file_number',"")
+        first_name = request.POST.get('first_name',"")
+        last_name = request.POST.get('last_name',"")
+        other_name = request.POST.get('other_namer',"")
+        date_of_birth = request.POST.get('date_of_birth',"")
+        gender = request.POST.get('gender',"")
+        nationality = request.POST.get('nationality',"")
+        # created_by = request.POST.get(' created_by',"")
+        passport = request.FILES.get('passport',"")
+
+        bio = Biodata(file_number=file_number,first_name=first_name,last_name=last_name,other_name=other_name,
+                      date_of_birth=date_of_birth,gender=gender, nationality=nationality,passport=passport)
+        bio.save()
+        return redirect("/") 
+    context = {'gend':gend,'con':con}           
     return render(request,  'profiles/Bio-form.html', context)
 
 
