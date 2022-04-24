@@ -34,9 +34,22 @@ def BiodataViews(request):
 
 def EmploymentDetails(request):
     if request.method == 'POST':
+        biodata = request.POST.get('biodata',"")
+        ministry = request.POST.get('ministry',"")
+        directorate = request.POST.get('directorate',"")
+        department = request.POST.get('department',"")
+        unit = request.POST.get('unit',"")
+        designation = request.POST.get('designation',"")
+        salary_scale = request.POST.get('salary_scale',"")
+        grade = request.POST.get('grade',"")
+        step = request.POST.get('step',"")
+        ippis_no = request.POST.get('ippis_no',"")
+
+        employd = EmploymentDetails(biodata=biodata,ministry=ministry,directorate=directorate,department=department,
+                    unit=unit,designation=designation,salary_scale=salary_scale,grade=grade,step=step,ippis_no=ippis_no)
         
-        
-            return redirect('/')
+        employd.save()
+        return redirect("/")
     #context = {'form':form}        
     return render(request,  'profiles/employ-form.html')            
 
