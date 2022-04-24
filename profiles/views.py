@@ -33,14 +33,12 @@ def BiodataViews(request):
 
 
 def EmploymentDetails(request):
-    form = EmploymentDetailsForm()
     if request.method == 'POST':
-        form = EmploymentDetailsForm(request.POST)
-        if form.is_valid():
-            form.save()
+        
+        
             return redirect('/')
-    context = {'form':form}        
-    return render(request,  'profiles/employ-form.html', context)            
+    #context = {'form':form}        
+    return render(request,  'profiles/employ-form.html')            
 
         
 
