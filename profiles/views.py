@@ -46,7 +46,7 @@ def EmploymentDetails(request):
         ippis_no = request.POST.get('ippis_no',"")
 
         employd = EmploymentDetails(biodata=biodata,ministry=ministry,directorate=directorate,department=department,
-                    unit=unit,designation=designation,salary_scale=salary_scale,grade=grade,step=step,ippis_no=ippis_no)
+                                    unit=unit,designation=designation,salary_scale=salary_scale,grade=grade,step=step,ippis_no=ippis_no)
         
         employd.save()
         return redirect("/")
