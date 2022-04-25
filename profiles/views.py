@@ -45,13 +45,13 @@ def EmploymentDetails(request):
         step = request.POST.get('step',"")
         ippis_no = request.POST.get('ippis_no',"")
 
-        employd = EmploymentDetails(biodata=biodata,ministry=ministry,directorate=directorate,department=department,
+        e_form = EmploymentDetails(biodata=biodata,ministry=ministry,directorate=directorate,department=department,
                                     unit=unit,designation=designation,salary_scale=salary_scale,grade=grade,step=step,ippis_no=ippis_no)
         
-        employd.save()
+        e_form.save()
         return redirect("/")
     #context = {'form':form}        
-    return render(request,  'profiles/employ-form.html')            
+    return render(request,  'profiles/e_form.html')            
 
         
 
